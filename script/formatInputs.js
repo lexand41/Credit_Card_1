@@ -24,7 +24,8 @@ const btnLock = (regEx, input) => {
 };
 
 const formatHolder = () => {
-  inputHolder.value = inputHolder.value.replace(/[^A-Z\s]/i, '');
+  inputHolder.value =
+    inputHolder.value.replace(/[^A-Z\s]/i, '').substring(0, 21);
   cardHolder.textContent =
     inputHolder.value.replace(/./g, (str) => str.toUpperCase());
   const regexUserName = /^([A-Z]+)\s([A-Z]+)$/i;

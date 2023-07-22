@@ -191,11 +191,12 @@
 }
 
 .input__holder {
-  padding: 19px 94px;
+  padding: 19px 50px;
 }
 
 .input__number {
-  padding: 19px 58px;
+  padding: 19px 50px;
+  /* text-align: center; */
 }
 
 .input__date {
