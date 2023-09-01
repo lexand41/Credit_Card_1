@@ -1,8 +1,17 @@
 {
   "name": "credit_card-1lvl",
-  "scripts": {},
+  "scripts": {
+    "test:unit": "jest",
+    "test": "npm i && jest"
+  },
   "author": "Sinyakov Aleksandr",
   "dependencies": {
     "redom": "^3.29.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.22.11",
+    "@babel/preset-env": "^7.22.14",
+    "babel-jest": "^29.6.4",
+    "jest": "^29.6.4"
   }
 }

@@ -38,7 +38,20 @@
   font-size: 14px;
   line-height: 17px;
   padding-left: 22px;
-  margin-bottom: 37px;
+  margin-bottom: 17px;
+}
+
+.validate {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  padding-bottom: 15px;
+  opacity: 0;
+}
+
+.validate.active {
+  opacity: 1;
 }
 
 .secure:before {

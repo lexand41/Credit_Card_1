@@ -8,6 +8,7 @@ const cardHolder = document.querySelector('.card__name');
 const cardExpiry = document.querySelector('.card__date');
 const cardNumber = document.querySelector('.card__number');
 const btnCheckOut = document.querySelector('.form__button');
+const validate = document.querySelector('.validate');
 
 export default {
   cardForm,
@@ -20,4 +21,5 @@ export default {
   cardExpiry,
   cardNumber,
   btnCheckOut,
+  validate,
 };

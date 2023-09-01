@@ -11,15 +11,33 @@ const {
   cardExpiry,
   cardNumber,
   btnCheckOut,
+  validate,
 } = elemFromPage;
+
+const timerOff = () => {
+  const timerId = setInterval(() => {
+    validate.classList.remove('active');
+    clearInterval(timerId);
+  }, 2000);
+};
 
 const btnLock = (regEx, input) => {
   if (regEx.test(input.value) || input.value === '') {
     btnCheckOut.disabled = false;
     btnCheckOut.style.opacity = '1';
+    if (regEx.test(input.value)) {
+      validate.classList.add('active');
+      validate.textContent = 'Valid data';
+      validate.style.color = '';
+      timerOff();
+    }
+    if (input.value === '') timerOff();
   } else {
     btnCheckOut.setAttribute('disabled', 'true');
     btnCheckOut.style.opacity = '.5';
+    validate.classList.add('active');
+    validate.textContent = 'Invalid data';
+    validate.style.color = 'red';
   }
 };
 
@@ -32,11 +50,14 @@ const formatHolder = () => {
   btnLock(regexUserName, inputHolder);
 };
 
+
 const formatCardCode = () => {
   const cardCode = inputCode.value.replace(/[^\d]/g, '').substring(0, 16);
   const regexNumber = /^\d{4}\s\d{4}\s\d{4}\s\d{4}$/;
   inputCode.value = cardCode !== '' ? cardCode.match(/.{1,4}/g).join(' ') : '';
   cardNumber.textContent = inputCode.value;
+  console.log(inputCode.value);
+  console.log(inputCode);
   btnLock(regexNumber, inputCode);
 };
 

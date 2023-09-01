@@ -34,9 +34,11 @@ const goodsListPage = () => {
         required: 'true'}),
     ]),
     el('button', {className: 'form__button'}, 'CHECK OUT'),
+    // el('button', {className: 'form__button'}, 'CHECK OUT'),
   ]);
   const card = el('div', {className: 'card'},
     [el('p', {className: 'secure'}, 'Secure Checkout'),
+      el('h2', {disabled: true, className: 'validate'}, 'Valid data'),
       creditCard, form]);
 
   return el('div', {className: 'wrapper'}, card);
